@@ -2,7 +2,9 @@
 
 Dr-Json is a web application that allows you to format and minify JSON data with ease. It provides a simple and intuitive user interface where you can paste your JSON data, and it will automatically format it to improve readability or minify it to reduce the size. Additionally, Dr-Json provides a "Copy to Clipboard" feature for both the input and output JSON data.
 
-![Dr-Json Screenshot](./screenshot.png)
+## Screenshot
+
+![Dr-Json Screenshot](https://github.com/niteshpk/dr-json/assets/25909806/eebf5b90-6487-43f1-a24d-f7b9a9560ff1)
 
 ## Features
 
@@ -14,7 +16,7 @@ Dr-Json is a web application that allows you to format and minify JSON data with
 
 ## Demo
 
-A live demo of Dr-Json is available at [https://dr-json.vercel.app/](https://dr-json.vercel.app/).
+A live demo of Dr-Json is available at [https://dr-json-niteshpk.vercel.app/](https://dr-json.vercel.app/).
 
 ## Installation
 
