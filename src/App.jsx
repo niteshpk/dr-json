@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Swal from "react-bootstrap-sweetalert";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -10,6 +10,20 @@ function App() {
   const formattedJsonRef = useRef(null);
   const [showAlert, setShowAlert] = useState(false);
   const [alertConfig, setAlertConfig] = useState({});
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const appElement = document.documentElement;
+    if (isDarkMode) {
+      appElement.classList.add("dark-mode");
+    } else {
+      appElement.classList.remove("dark-mode");
+    }
+  }, [isDarkMode]);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
 
   const showAlertMessage = (title, text, type) => {
     setAlertConfig({ title, text, type });
@@ -52,9 +66,9 @@ function App() {
   };
 
   return (
-    <>
-      <Header />
-      <div className="container mt-5">
+    <div className={`${isDarkMode ? "dark-mode" : ""}`}>
+      <Header isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
+      <div className={`container mt-5`}>
         <div className="row justify-content-center">
           <div className="col-md-5">
             <h1 className="text-center mb-4">Input Json</h1>
@@ -128,7 +142,7 @@ function App() {
         </Swal>
       )}
       <Footer />
-    </>
+    </div>
   );
 }
 
